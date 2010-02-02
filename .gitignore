@@ -3,3 +3,5 @@ tmp/pids/*
 db/*.sqlite3
 
 **/.DS_Store
+
+*~
