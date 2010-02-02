@@ -1,6 +1,10 @@
-<h1>Find Your Kindle's Personal ID (PID)</h1>
+<p class="explanation">
+	If you wish to DRM-protect your own personal content for distribution-disabled delivery to peers--such as within a classroom or sensitive work setting--you must know Kindle PID numbers for those devices that you wish to be able to open your documents. <strong>This tool is intended to enable secure distribution of your own content ONLY and does NOT provide you with any tools to remove the DRM you apply.</strong> By using this tool you accept all responsibilities of doing so, and recognize that this software comes without any warranty of any kind, whatsoever.
+</p>
 
-<p>Use this page to find the Personal ID (PID) of your Kindle hardware device. (This also works for the iPhone Kindle app.)
+<h1>Finding Kindle's Personal ID (PID)</h1>
+
+<p>Use this page to find the Personal ID (PID) of a Kindle hardware device. (This should also works for the iPhone Kindle app.)
 </p>
 <ol>
 	<li>From your Kindle's home screen, navigate to the "Settings" page.</li>
@@ -11,9 +15,9 @@
 <% form_remote_tag(:url => {:action => 'calculate_pid'}, :update => "results", :position => :top,
  :loading => "Element.show('spinner')", :complete => "Element.hide('spinner')",
  :html => {:id => 'calculate_pid_form'}) do %>
-<div><label>Email</label> <%= text_field "device", "email" %>
+<div><label>Optional Email</label> <%= text_field "device", "email" %>
 </div>
-<div><label>Serial</label> <%= text_field "device", "serial" %>
+<div><label>Required Serial</label> <%= text_field "device", "serial" %>
 </div>
 <div><label></label><%= submit_tag 'Calculate' %></div>
 <% end %>
