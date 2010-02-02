@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Kindle Tools <%= " :: #{h(@title)}" if @title %></title>
+  <%= stylesheet_link_tag 'reset', 'default' %>
+  <%= javascript_include_tag :defaults %>
+</head>
+<body>
+
+<div id="everything">
+	
+	<div id="title"><%= link_to 'Kindle Tools', :controll => 'welcome' %></div>
+	
+	<div id="content_top">&nbsp;</div>
+	
+	<div id="content_middle">
+	
+ 	   <ul id="navigation">	
+ 	   	<li><%= link_to "Serial-to-PID Calculator", '/' %></li>
+ 	   </ul>
+ 	
+
+ 	
+ 	   <div id="page">
+			<div id="flash">
+		      <% flash.each do |key, value| -%>
+		        <div id="flash_<%= key %>"><%=h value %></div>
+		      <% end -%>
+		    </div>
+			<%= yield  %>
+ 	   </div>
+ 	   
+ 	   <div id="footer">
+ 	   	<p>Kindle Tools © <%= Time.now.year %> <a href="http://www.prestonlee.com">Preston Lee</a>. All rights reserved.</p>
+ 	   </div>
+	</div>
+	<div id="content_bottom">&nbsp;</div>
+	
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1395497-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>

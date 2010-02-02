@@ -1,0 +1,23 @@
+<h1>Find Your Kindle's Personal ID (PID)</h1>
+
+<p>Use this page to find the Personal ID (PID) of your Kindle hardware device. (This also works for the iPhone Kindle app.)
+</p>
+<ol>
+	<li>From your Kindle's home screen, navigate to the "Settings" page.</li>
+	<li>Type "411" (without the quotes). A super secret screen should now appear.</li>
+	<li>Submit the 16-digit Kindle serial number and personal email address in the form below to instantly calculate the PID number.</li>
+</ol>
+
+<% form_remote_tag(:url => {:action => 'calculate_pid'}, :update => "results", :position => :top,
+ :loading => "Element.show('spinner')", :complete => "Element.hide('spinner')",
+ :html => {:id => 'calculate_pid_form'}) do %>
+<div><label>Email</label> <%= text_field "device", "email" %>
+</div>
+<div><label>Serial</label> <%= text_field "device", "serial" %>
+</div>
+<div><label></label><%= submit_tag 'Calculate' %></div>
+<% end %>
+
+<div id="results">
+	
+</div>
