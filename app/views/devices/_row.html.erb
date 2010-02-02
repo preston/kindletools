@@ -1,0 +1,10 @@
+<% course = row %>
+<tr id="course_<%= course.id %>" class="<%= cycle 'odd', 'even', :name => 'courses' %>">	
+  <td><%= link_to h(course.name), course_path(course)  %></td>
+  <td><%= link_to h(course.description), course_path(course) %></td>
+  <td><%= link_to h("#{course.room.building.name} #{course.room.name}"), edit_room_path(course.room) %></td>
+  <td><%= link_to course.students.count %></td>
+  <td><%= link_to course.instructors.count %></td>
+  <td><%= link_to image_tag('/images/icons/pencil.png'), edit_course_path(course) %>
+  <%= link_to_remote image_tag('/images/icons/bin_closed.png'), :url => course_url(course), :method => :delete %></td>
+</tr>
