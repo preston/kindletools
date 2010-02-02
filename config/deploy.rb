@@ -1,9 +1,13 @@
 set :application, "kindletools"
 set :domain,      "kindletools.prestonlee.com"
-set :repository,  "ssh://#{domain}/path-to-your-git-repo/#{application}.git"
+#set :repository,  "ssh://#{domain}/var/git/#{application}"
+set	:repository,	"git@github.com:preston/kindletools.git"
 set :use_sudo,    false
 set :deploy_to,   "/var/www/#{domain}"
+set :deploy_via, 'copy'
 set :scm,         "git"
+# set :scm_username,		"www-data"
+set :user,			"www-data"
 
 role :app, domain
 role :web, domain
