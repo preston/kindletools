@@ -40,14 +40,14 @@ namespace :config do
   
   desc "Update server-only config files to new deployment directory."
   task :update, :roles => [:app] do
-    run "cp -Rf #{shared_path}/config #{release_path}"
+    run "cp -Rfv #{shared_path}/config #{release_path}"
   end
   after "deploy:update_code", "config:update"
  
-  desc "Update shared server database symlink for new deployment."
-  task :database, :roles => [:app] do
-    run "ln -s #{shared_path}/db/production.sqlite3 #{release_path}/db/production.sqlite3"
-  end
-  after "deploy:update_code", "config:update"
+  # desc "Update shared server database symlink for new deployment."
+  # task :database, :roles => [:app] do
+  #   run "ln -s #{shared_path}/db/production.sqlite3 #{release_path}/db/production.sqlite3"
+  # end
+  # after "deploy:update_code", "config:update"
 
 end
