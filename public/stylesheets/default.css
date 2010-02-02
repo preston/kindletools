@@ -1,5 +1,5 @@
 
-body { font-family: Verdana, Trebuchet, arial, helvetica, sans-serif; font-size:   13px; background: #F8F880 url(/images/asu_sun.png) no-repeat 300px -100px; }
+body { font-family: Verdana, Trebuchet, arial, helvetica, sans-serif; font-size:   13px; background: #500818 url(/images/asu_sun.png) no-repeat 300px -100px; }
 
 #title { color:#bb9;font-size:10px;font-weight:bold;margin:2px auto 0;text-align:center;}
 
@@ -16,7 +16,9 @@ div#everything {width: 800px;margin: 0 auto 0 auto;}
 #notice,
 #error {padding: 4px; font-size: 16pt;}
 
-#results div {margin: 20px; padding: 20px; background: #e0e0e0; border: 4px #aaa dashed;}
+#results div {margin: 20px; padding: 20px; border: 1px #aaa solid;}
+.result_good {background: #68BE6C;}
+.result_bad {background: #E9A1A3;}
 .count {clear: both; color: #aaa;}
 
 div#page {margin: 10px 0;}
@@ -38,7 +40,10 @@ p {margin: 10px 0;}
 ol li {list-style-type: decimal; margin-left: 30px;}
 strong {font-weight: bold;}
 
-h1 {font-size: 18pt; }
+h1 {background:#333333 none repeat scroll 0 0;
+color:#EEEEEE;
+font-size:18pt;
+padding:10px;}
 h2 {font-size: 15pt; }
 
 a { color: #000; text-decoration: none; }
@@ -61,7 +66,11 @@ a.button > div input, div.button > div input
 
 .new_button {float: right; margin-right: 10px;}
 
-form {width: 650px; margin: 20px;}
+form {background:#F8F8F8 none repeat scroll 0 0;
+border:1px solid #CCCCCC;
+margin:20px;
+padding:20px 0;
+width:650px;}
 form > div { margin: 4px; }
 form label { float: left; width: 250px; text-align: right; margin: 2px 4px; clear: left; color: #555; font-size: 18pt;}
 /*form input,*/
