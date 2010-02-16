@@ -1,3 +1,5 @@
+config/newrelic.yml
+
 log/*.log
 tmp/pids/*
 db/*.sqlite3
