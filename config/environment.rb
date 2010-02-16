@@ -21,7 +21,8 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
 	config.gem "kindle-drm", :lib => "kindle-drm", :version => ">= 0.6.0", :source => "http://gemcutter.org"
 	config.gem "clearance"
-	config.gem "newrelic_rpm"
+	# config.gem "newrelic_rpm" # We're using it as a plugin instead.
+	# config.gem "capistrano", :version => '=2.5.14' # newrelic_rpm seems to be picky about it. :(
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
