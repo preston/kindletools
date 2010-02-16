@@ -66,6 +66,15 @@ module NewRelic
       short_name
     end
     
+    def apdex_metric_path
+      "Apdex/#{segments[1..-1].join('/')}"
+    end
+    
+    # A short name for legends in the graphs
+    def legend_name
+      short_name
+    end
+    
     # Return the name of another metric if the current
     # metric is really add-on data for another metric.
     def base_metric_name
@@ -102,7 +111,11 @@ module NewRelic
     def url
     ''
     end
-
+    
+    # returns a hash of params for url_for(), giving you a drilldown URL to an RPM page for this metric
+    # define in subclasses - TB 2009-12-18
+    # def drilldown_url(metric_id); end
+    
     def initialize(name)
       @name = name
     end
