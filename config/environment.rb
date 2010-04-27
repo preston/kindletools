@@ -19,7 +19,7 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-	config.gem "kindle-drm", :lib => "kindle-drm", :version => ">= 0.6.0", :source => "http://gemcutter.org"
+	config.gem "kindle-drm", :lib => "kindle-drm", :version => ">= 0.10.0", :source => "http://gemcutter.org"
 	config.gem "clearance"
 	# config.gem "newrelic_rpm" # We're using it as a plugin instead.
 	# config.gem "capistrano", :version => '=2.5.14' # newrelic_rpm seems to be picky about it. :(
