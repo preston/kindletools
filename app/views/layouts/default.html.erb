@@ -5,6 +5,9 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Kindle Tools <%= " :: #{h(@title)}" if @title %></title>
+	<meta name="description" content="<%= @meta_description.nil? ? "Find your Amazon Kindle's PID using the device serial number using this site." : @meta_description %>" />
+	<meta name="keywords" content="<%= @meta_keywords.nil? ? "amazon, kindle, pid, books, drm, mobipocket, azw, hacking, preston lee" : @meta_description %>" />
+	</title>
   <%= stylesheet_link_tag 'reset', 'default' %>
   <%= javascript_include_tag :defaults %>
 </head>
@@ -19,7 +22,9 @@
 	<div id="content_middle">
 	
  	   <ul id="navigation">	
- 	   	<li><%= link_to "Serial-to-PID Calculator", '/' %></li>
+ 	   	<li><%= link_to "PID Finder", :controller => 'welcome', :action => 'index' %></li>
+ 	   	<li><%= link_to "Serial Numbers", :controller => 'welcome', :action => 'instructions' %></li>
+ 	   	<li><%= link_to "About", :controller => 'welcome', :action => 'about' %></li>
  	   </ul>
  	
 

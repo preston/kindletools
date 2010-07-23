@@ -1,24 +1,17 @@
 
 
 
-<h1>Finding Kindle's Personal ID (PID)</h1>
+<h1><%= @title = "Find Your Kindle's PID (Personal ID)" %></h1>
 
-<p>Your Kindle's serial number is printed on the box that it was packaged in when you received it. If you do not have the box from which to get the serial number:
-</p>
-<ol>
-	<li>From your Kindle's home screen, navigate to the "Settings" page.</li>
-	<li>Type "411" (without the quotes). A super secret screen should now appear.</li>
-	<li>Submit the 16-digit Kindle <strong>case-sensitive</strong> serial number and personal email address in the form below to instantly calculate the PID number.</li>
-</ol>
-<p>This form should always work for the iPhone Kindle application.</p>
+<p>This form also works for the Kindle iPhone/iPad application.</p>
 
 
 <% form_remote_tag(:url => {:action => 'calculate_pid'}, :update => "results", :position => :top,
  :loading => "Element.show('spinner')", :complete => "Element.hide('spinner')",
  :html => {:id => 'calculate_pid_form'}) do %>
-<div><label>Optional Email</label> <%= text_field "device", "email" %>
+<div><label>Optional Email</label> <%= text_field "device", "email" %><div class="instruction">Your real email address, <em>not</em> your @kindle.com address.</div>
 </div>
-<div><label>Required Serial</label> <%= text_field "device", "serial" %>
+<div><label>Reader Serial</label> <%= text_field "device", "serial" %><div class="instruction"><%= link_to 'How do I find this?', :action => 'instructions' %></div>
 </div>
 <div><label></label><%= submit_tag 'Calculate' %></div>
 <% end %>
@@ -37,10 +30,3 @@
 <div id="wishlist">
 	<SCRIPT charset="utf-8" type="text/javascript" src="http://ws.amazon.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822/US/prestoncom-20/8004/49cd5000-bb01-497b-b5a4-929909b1af0a"> </SCRIPT> <NOSCRIPT><A HREF="http://ws.amazon.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Fprestoncom-20%2F8004%2F49cd5000-bb01-497b-b5a4-929909b1af0a&Operation=NoScript">Amazon.com Widgets</A></NOSCRIPT>
 </div>
-
-<h1>About</h1>
-
-
-<p class="explanation">
-	If you wish to DRM-protect your own personal content for distribution-disabled delivery to peers--such as within a classroom or sensitive work setting--you must know Kindle PID numbers for those devices that you wish to be able to open your documents. <strong>This tool is intended to enable secure distribution of your own content ONLY and does NOT provide you with any tools to remove the DRM you apply.</strong> By using this tool you accept all responsibilities of doing so, and recognize that this software comes without any warranty of any kind, whatsoever.
-</p>
