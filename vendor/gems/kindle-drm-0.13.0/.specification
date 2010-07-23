@@ -1,0 +1,95 @@
+--- !ruby/object:Gem::Specification 
+name: kindle-drm
+version: !ruby/object:Gem::Version 
+  hash: 43
+  prerelease: false
+  segments: 
+  - 0
+  - 13
+  - 0
+  version: 0.13.0
+platform: ruby
+authors: 
+- Preston Lee
+- Igor Skochinsky
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2010-07-22 00:00:00 -07:00
+default_executable: serial_to_pid.rb
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: thoughtbot-shoulda
+  prerelease: false
+  requirement: &id001 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 3
+        segments: 
+        - 0
+        version: "0"
+  type: :development
+  version_requirements: *id001
+description: A Ruby library for performing DRM-related operations on .mobi files, know as DRM'd .azw files on the Amazon Kindle.
+email: conmotto@gmail.com
+executables: 
+- serial_to_pid.rb
+extensions: []
+
+extra_rdoc_files: 
+- LICENSE
+- README.rdoc
+files: 
+- .document
+- .gitignore
+- .project
+- LICENSE
+- README.rdoc
+- Rakefile
+- VERSION
+- bin/serial_to_pid.rb
+- kindle-drm.gemspec
+- lib/kindle-drm.rb
+- lib/kindle/drm.rb
+- test/helper.rb
+- test/test_kindle-drm.rb
+has_rdoc: true
+homepage: http://github.com/preston/kindle-drm
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --charset=UTF-8
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.3.7
+signing_key: 
+specification_version: 3
+summary: Amazon Kindle .azw file manipulation library.
+test_files: 
+- test/helper.rb
+- test/test_kindle-drm.rb
