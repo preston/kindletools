@@ -6,14 +6,51 @@
 <p>This form also works for the Kindle iPhone/iPad application.</p>
 
 
-<% form_remote_tag(:url => {:action => 'calculate_pid'}, :update => "results", :position => :top,
- :loading => "Element.show('spinner')", :complete => "Element.hide('spinner')",
- :html => {:id => 'calculate_pid_form'}) do %>
-<div><label>Optional Email</label> <%= text_field "device", "email" %><div class="instruction">Your real email address, <em>not</em> your @kindle.com address.</div>
+
+
+<%= form_tag({:action => 'calculate_pid'}, :id => 'calculate_pid_form') do %>
+<script type="text/javascript">
+	$('#calculate_pid_form').bind('submit', function() {
+		
+		form = $('#calculate_pid_form');
+		// alert(form);
+		var data = form.serialize();		
+	  var url = form.attr('action');
+ 	  $.ajax({
+ 	    beforeSend	: function(request) { request.setRequestHeader("Accept", "text/javascript"); },
+ 	 	  data			: data,
+ 	    success	: function(data, textStatus, XMLHttpRequest) {
+ 	 	  					// $("#annotation_links_rows").append(data);
+ 	 	  						$("#results").prepend(data);
+		 						$("#results").effect('highlight');
+ 	 	  					},
+ 	 	  error		: function(XMLHttpRequest, textStatus, errorThrown) {
+ 	 	  					alert("Hmm.. A server error occurred. Please report the following error.");
+ 	 	  					alert(errorThrown);
+ 	 	  					},
+ 	    type			: 'POST',
+ 	    url			: url
+ 	  });
+		return false;
+	});
+</script>
+
+<div>
+	<label>Optional Email</label>
+	<%= text_field "device", "email" %>
+	<div class="instruction">Your real email address, <em>not</em> your @kindle.com address.</div>
 </div>
-<div><label>Reader Serial</label> <%= text_field "device", "serial" %><div class="instruction"><%= link_to 'How do I find this?', :action => 'instructions' %></div>
+
+<div>
+	<label>Reader Serial</label>
+	<%= text_field "device", "serial" %>
+	<div class="instruction"><%= link_to 'How do I find this?', :action => 'instructions' %></div>
 </div>
-<div><label></label><%= submit_tag 'Calculate' %></div>
+
+<div>
+	<label></label>
+	<%= submit_tag 'Calculate' %>
+</div>
 <% end %>
 
 <div id="results">

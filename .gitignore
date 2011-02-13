@@ -1,9 +1,5 @@
-config/newrelic.yml
-
-log/*.log
-tmp/pids/*
+.bundle
 db/*.sqlite3
-
+log/*.log
+tmp/**/*
 **/.DS_Store
-
-*~

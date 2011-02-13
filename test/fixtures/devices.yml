@@ -1,9 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  serial: MyString
-  pid: MyString
-
-two:
-  serial: MyString
-  pid: MyString
+<% [1..10].each do |n| %>
+device_<%= n %>:
+  serial: device_<%= n %>
+  pid: pid_<%= n %>
+  email: <%= n %>@example.com
+<% end %>
