@@ -8,7 +8,7 @@ class WelcomeController < ApplicationController
 		@serial = params[:device][:serial]
 		@type, @size, @pad = serialToDeviceTypeAndPidSize(@serial)
 		respond_to do |format|
-	    format.js	{
+	    format.html	{
 				if @type.nil?
 					render	'bad', :layout => false
 				else

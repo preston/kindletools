@@ -5,11 +5,11 @@
 
   <p>
     <%= f.label :serial %><br />
-    <%= f.text_field :serial %>
+    <%= f.email_field :serial %>
   </p>
   <p>
     <%= f.label :pid %><br />
-    <%= f.text_field :pid %>
+    <%= f.text_field :pid, required: true %>
   </p>
   <p>
     <%= f.submit 'Create' %>

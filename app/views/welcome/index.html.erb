@@ -17,7 +17,7 @@
 		var data = form.serialize();		
 	  var url = form.attr('action');
  	  $.ajax({
- 	    beforeSend	: function(request) { request.setRequestHeader("Accept", "text/javascript"); },
+ 	    beforeSend	: function(request) { request.setRequestHeader("Accept", "text/html"); },
  	 	  data			: data,
  	    success	: function(data, textStatus, XMLHttpRequest) {
  	 	  					// $("#annotation_links_rows").append(data);

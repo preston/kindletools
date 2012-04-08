@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-KindleTools::Application.config.secret_token = '61955a6925bcd5c801aa45921feeaaf41c8d5f5e8a414fd0019c38c96c4e5fcc3e644adb6f949b4f4183b3b6348c4bca5dbba2f5406deed973522c1b5b3a6fe4'
+KindleTools::Application.config.secret_token = 'ec8680a60685acdefb2cc69ae1620b8d8cd2853c07a94abdeefee61be37802429ac53c30a8feca06f75cf44aa07a360fb23a033270da86c9df205c3e8ae0ba7f'
