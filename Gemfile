@@ -10,15 +10,17 @@ gem	'jquery-rails'
 gem 'kindle-drm', '>= 0.13.0', :require => 'kindle-drm'
 gem 'clearance'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
-end
+
 
 group :development, :test do
 	gem 'capistrano'
 	gem 'rvm-capistrano'
+end
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+	gem 'sass-rails'
+	gem 'coffee-rails'
+	gem 'uglifier'
 end
