@@ -1,17 +1,10 @@
 source 'http://rubygems.org'
+ruby '2.0.0'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem	'jquery-rails'
-
-# gem 'capistrano'
-
-# gem 'ruby-debug19'
-
-# group :development, :test do
-#   gem 'webrat'
-# end
 
 
 gem 'kindle-drm', '>= 0.13.0', :require => 'kindle-drm'
@@ -23,4 +16,9 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
+end
+
+group :development, :test do
+	gem 'capistrano'
+	gem 'rvm-capistrano'
 end
