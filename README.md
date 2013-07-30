@@ -12,5 +12,4 @@ Written by Preston Lee. @prestonism http://prestonlee.com
 
 Legal
 ----
-Released under the 
-Copyright © 2009-2013 Preston Lee. All rights reserved.
+Released under the Apache 2 license. Copyright © 2009-2013 Preston Lee. All rights reserved.
