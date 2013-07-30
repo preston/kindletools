@@ -1,3 +1,11 @@
+require 'rvm/capistrano'
+require "bundler/capistrano"
+
+set :rvm_type,              :system
+set :rvm_ruby_string,       "ruby-2.0.0"
+set :rvm_path,              "/usr/local/rvm"
+
+
 set :application, "kindletools"
 set :domain,      "kindletools.prestonlee.com"
 #set :repository,  "ssh://#{domain}/var/git/#{application}"
@@ -12,6 +20,11 @@ set :user,			"www-data"
 role :app, domain
 role :web, domain
 role :db,  domain, :primary => true
+
+
+after "deploy", "deploy:migrate"
+after "deploy:migrate", 'deploy:cleanup'
+
 
 namespace :deploy do
   task :start, :roles => :app do
