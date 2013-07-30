@@ -1,26 +1,23 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 ruby '2.0.0'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.0'
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
 
 gem 'sqlite3'
 gem	'jquery-rails'
+gem 'jquery-ui-rails'
 
+gem 'slim-rails'
 
 gem 'kindle-drm', '>= 0.13.0', :require => 'kindle-drm'
-gem 'clearance'
-
-
 
 group :development, :test do
 	gem 'capistrano'
 	gem 'rvm-capistrano'
-end
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-	gem 'sass-rails'
-	gem 'coffee-rails'
-	gem 'uglifier'
+	gem 'binding_of_caller'
+	gem 'better_errors'
 end
