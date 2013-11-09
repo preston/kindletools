@@ -1,0 +1,62 @@
+
+.well.well-lg
+
+	h1 = @title = "Find Your Kindle's PID (Personal ID)"
+	
+	= form_tag({:action => 'calculate_pid'}, id: 'calculate_pid_form', role: 'form')
+		javascript:
+			$('#calculate_pid_form').bind('submit', function() {
+				
+				form = $('#calculate_pid_form');
+				// alert(form);
+				var data = form.serialize();		
+			  var url = form.attr('action');
+		 	  $.ajax({
+		 	    beforeSend	: function(request) { request.setRequestHeader("Accept", "text/html"); },
+		 	 	  data			: data,
+		 	    success	: function(data, textStatus, XMLHttpRequest) {
+		 	 	  					// $("#annotation_links_rows").append(data);
+		 	 	  						$("#results").prepend(data);
+				 						$("#results").effect('highlight');
+		 	 	  					},
+		 	 	  error		: function(XMLHttpRequest, textStatus, errorThrown) {
+		 	 	  					alert("Hmm.. A server error occurred. Please report the following error.");
+		 	 	  					alert(errorThrown);
+		 	 	  					},
+		 	    type			: 'POST',
+		 	    url			: url
+		 	  });
+				return false;
+			});
+		
+		
+		.form-group
+			label Optional Email
+			= email_field "device", "email", class: 'form-control'
+			.help-block Your real email address, <em>not</em> your @kindle.com address.
+		
+		.form-group
+			label Reader Serial
+			= text_field "device", "serial", class: 'form-control'
+			.help-block
+				| Case sensitive! 
+				= link_to 'How do I find this?', instructions_path
+		
+		.form-group = submit_tag 'Calculate', class: 'btn btn-lg btn-primary'
+
+
+	#results
+
+
+
+h1 Please support this site!
+p
+	| This site is developed and maintained for *free* to save your valuable time. **Please** support the site maintainers, Amazon and publishers simultaneously by
+	= link_to 'donating something from this list', "http://www.amazon.com/wishlist/10V5YNMG4VOED"
+	| .
+
+
+#wishlist
+	script charset="utf-8" type="text/javascript" src="http://ws.amazon.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822/US/prestoncom-20/8004/49cd5000-bb01-497b-b5a4-929909b1af0a"
+	noscript
+		a href="http://ws.amazon.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Fprestoncom-20%2F8004%2F49cd5000-bb01-497b-b5a4-929909b1af0a&Operation=NoScript" Amazon.com Widgets

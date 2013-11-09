@@ -1,0 +1,91 @@
+doctype html
+
+html
+	head
+ 		meta http-equiv="content-type" content="text/html;charset=UTF-8"
+		title = @title ? "Kindle Tools :: #{h(@title)}" : 'Kindle Tools'
+
+	meta name="description" content="#{@meta_description.nil? ? 'Find your Amazon Kindle PID using the device serial number using this site.' : @meta_description }"
+	meta name="keywords" content="#{@meta_keywords.nil? ? "amazon, kindle, pid, books, drm, mobipocket, azw, hacking, preston lee" : @meta_description }"
+ 	= stylesheet_link_tag 'application'
+	= javascript_include_tag 'application'
+	= csrf_meta_tag
+
+	body
+	
+		header.navbar.navbar-default.navbar-fixed role="banner"
+			.navbar-header
+		    	button.navbar-toggle type="button" data-toggle="collapse" data-target="#bs-navbar-collapse"
+		    	  span.sr-only Toggle navigation
+		    	  span.icon-bar
+		    	  span.icon-bar
+		    	  span.icon-bar
+		    	= link_to 'Kindle Tools', root_path, class: 'navbar-brand'
+		
+			/ Collect the nav links, forms, and other content for toggling -->
+			nav.collapse.navbar-collapse#bs-navbar-collapse
+			    ul.nav.navbar-nav
+			    	li = link_to "PID Finder", root_path
+			    	li = link_to "Serial Numbers", instructions_path
+			    	li = link_to "About", :controller => 'welcome', :action => 'about'
+		
+					
+		.container
+			= bootstrap_flash
+			= yield
+		
+			h1 Discuss
+		
+			#disqus_thread
+	
+			javascript:
+				var disqus_identifier = 'kindletools';
+				(function() {
+					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					dsq.src = 'http://kindletools.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				})();
+			
+			noscript
+				| Please enable JavaScript to view the
+				a href="http://disqus.com/?ref_noscript=kindletools"
+				|  comments powered by Disqus.
+			a href="http://disqus.com" class="dsq-brlink"
+				| blog comments powered by
+				span class="logo-disqus" Disqus
+			
+		
+		footer
+			p
+				| Kindle Tools ©
+				= Time.now.year
+				= link_to 'Preston Lee', "http://www.prestonlee.com"
+				| . All rights reserved.
+	
+	/ Google Analytics
+	javascript:
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E	"));
+		</script>
+		<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-1395497-4");
+		pageTracker._trackPageview();
+		} catch(err) {}</script>
+		
+		<!-- Disqus comments. -->
+		<script type="text/javascript">
+		//<![CDATA[
+		(function() {
+			var links = document.getElementsByTagName('a');
+			var query = '?';
+			for(var i = 0; i < links.length; i++) {
+			if(links[i].href.indexOf('#disqus_thread') >= 0) {
+				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+			}
+			}
+			document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.	com/forums/kindletools/get_num_replies.	js' + query + '"></' + 'script>');
+		})();
+		//]]>
+	
+	
