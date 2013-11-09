@@ -1,66 +1,40 @@
-require 'rvm/capistrano'
-require "bundler/capistrano"
+set :application, 'my_app_name'
+set :repo_url, 'git@example.com:me/my_repo.git'
 
-set :rvm_type,              :system
-set :rvm_ruby_string,       "ruby-2.0.0"
-set :rvm_path,              "/usr/local/rvm"
+# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
+# set :deploy_to, '/var/www/my_app'
+# set :scm, :git
 
-set :application, "kindletools"
-set :domain,      "kindletools.prestonlee.com"
-#set :repository,  "ssh://#{domain}/var/git/#{application}"
-set	:repository,	"git@github.com:preston/kindletools.git"
-set :use_sudo,    false
-set :deploy_to,   "/var/www/#{domain}"
-set :deploy_via, 'copy'
-set :scm,         "git"
-# set :scm_username,		"www-data"
-set :user,			"www-data"
+# set :format, :pretty
+# set :log_level, :debug
+# set :pty, true
 
-role :app, domain
-role :web, domain
-role :db,  domain, :primary => true
+# set :linked_files, %w{config/database.yml}
+# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-
-after "deploy", "deploy:migrate"
-after "deploy:migrate", 'deploy:cleanup'
-
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+# set :keep_releases, 5
 
 namespace :deploy do
-  task :start, :roles => :app do
-    run "touch #{current_release}/tmp/restart.txt"
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      # Your restart mechanism here, for example:
+      # execute :touch, release_path.join('tmp/restart.txt')
+    end
   end
 
-  task :stop, :roles => :app do
-    # Do nothing.
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      # Here we can do anything such as:
+      # within release_path do
+      #   execute :rake, 'cache:clear'
+      # end
+    end
   end
 
-  desc "Restart Application"
-  task :restart, :roles => :app do
-    run "touch #{current_release}/tmp/restart.txt"
-  end
-end
-
-
-namespace :config do
- 
-  desc "Add server-only shared directories."
-  task :setup, :roles => [:app] do
-  	run "mkdir -p #{shared_path}/config"
-    run "mkdir -p #{shared_path}/db"
-  end
-  after "deploy:setup", "config:setup"
-  
-  desc "Update server-only config files to new deployment directory."
-  task :update, :roles => [:app] do
-    run "cp -Rfv #{shared_path}/config #{release_path}"
-  end
-  after "deploy:update_code", "config:update"
- 
-  # desc "Update shared server database symlink for new deployment."
-  # task :database, :roles => [:app] do
-  #   run "ln -s #{shared_path}/db/production.sqlite3 #{release_path}/db/production.sqlite3"
-  # end
-  # after "deploy:update_code", "config:update"
+  after :finishing, 'deploy:cleanup'
 
 end
