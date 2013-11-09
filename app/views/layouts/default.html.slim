@@ -39,7 +39,7 @@ html
 			#disqus_thread
 	
 			javascript:
-				var disqus_identifier = 'kindletools';
+				// var disqus_identifier = 'kindletools';
 				(function() {
 					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 					dsq.src = 'http://kindletools.disqus.com/embed.js';
@@ -59,6 +59,7 @@ html
 			p
 				| Kindle Tools ©
 				= Time.now.year
+				|  
 				= link_to 'Preston Lee', "http://www.prestonlee.com"
 				| . All rights reserved.
 	
@@ -73,8 +74,8 @@ html
 		pageTracker._trackPageview();
 		} catch(err) {}</script>
 		
-		<!-- Disqus comments. -->
-		<script type="text/javascript">
+	/ Disqus comments.
+	javascript:
 		//<![CDATA[
 		(function() {
 			var links = document.getElementsByTagName('a');
