@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.1'
 
-gem 'rails', '4.0.4'
+gem 'rails', '4.1.0'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
@@ -22,7 +22,7 @@ gem 'kindle-drm', '>= 0.13.0', :require => 'kindle-drm'
 group :development do
 	gem 'sqlite3'
 
-	gem 'capistrano', '>= 3.1.0'
+	gem 'capistrano', '>= 3.2.0'
 	gem 'capistrano-rvm'
 	gem 'capistrano-bundler'
 	gem 'capistrano-rails'
