@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.1'
 
-gem 'rails', '4.1.0'
+gem 'rails', '4.1.1'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
@@ -20,7 +20,7 @@ gem 'jquery-ui-rails'
 gem 'kindle-drm', '>= 0.13.0', :require => 'kindle-drm'
 
 group :development do
-	gem 'sqlite3'
+	# gem 'sqlite3'
 
 	gem 'capistrano', '>= 3.2.0'
 	gem 'capistrano-rvm'
@@ -31,9 +31,9 @@ group :development do
 	gem 'better_errors'
 end
 
-group :production do
+# group :production do
 	gem 'pg'
-end
+# end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

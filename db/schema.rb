@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140420022923) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "devices", force: true do |t|
     t.string   "serial",     null: false
     t.string   "pid",        null: false
