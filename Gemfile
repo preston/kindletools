@@ -22,7 +22,7 @@ gem 'kindle-drm', '>= 0.13.0', :require => 'kindle-drm'
 group :development do
 	# gem 'sqlite3'
 
-	gem 'capistrano', '>= 3.2.0'
+	gem 'capistrano'
 	gem 'capistrano-rvm'
 	gem 'capistrano-bundler'
 	gem 'capistrano-rails'
