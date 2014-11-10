@@ -1,5 +1,5 @@
 set :stage, :production
-set :rvm_ruby_version, '2.1.3'
+set :rvm_ruby_version, '2.1.4'
 
 # Simple Role Syntax
 # ==================
