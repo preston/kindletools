@@ -31,9 +31,9 @@ group :development do
 	# gem 'better_errors'
 end
 
-# group :production do
+group :production do
 	gem 'pg'
-# end
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

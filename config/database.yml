@@ -1,17 +1,11 @@
 development:
-  adapter: postgresql
-  database: kindletools_development
-  hostname: localhost
-  username: postgres
-  password:
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
   timeout: 5000
 
 test:
-  adapter: postgresql
-  database: kindletools_test
-  hostname: localhost
-  username: postgres
-  password:
+  adapter: sqlite3
+  database: db/test.sqlite3
   pool: 5
   timeout: 5000
