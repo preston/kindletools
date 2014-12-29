@@ -5,7 +5,6 @@ gem 'rails', '4.2.0'
 gem 'sass-rails'
 gem 'uglifier'
 
-
 # Twitter bootstrap layout.
 gem "therubyracer"
 gem "less-rails"
@@ -16,13 +15,14 @@ gem 'slim-rails'
 gem	'jquery-rails'
 gem 'jquery-ui-rails'
 
-gem 'kindle-drm' #, '>= 0.13.0', :require => 'kindle-drm'
+gem 'kindle-drm'
 
 group :development do
 	gem 'sqlite3'
 
 	gem 'capistrano'
 	gem 'capistrano-rvm'
+	gem 'capistrano-rails-console'
 	gem 'capistrano-bundler'
 	gem 'capistrano-rails'
 	gem 'capistrano-passenger'
