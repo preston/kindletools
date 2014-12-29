@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.1.5'
+ruby '2.2.0'
 
-gem 'rails', '4.1.8'
+gem 'rails', '4.2.0'
 gem 'sass-rails'
 gem 'uglifier'
 
@@ -25,10 +25,11 @@ group :development do
 	gem 'capistrano-rvm'
 	gem 'capistrano-bundler'
 	gem 'capistrano-rails'
+	gem 'capistrano-passenger'
 
-	# gem 'byebug'
-	# gem 'binding_of_caller'
-	# gem 'better_errors'
+	gem 'byebug'
+
+	gem 'guard-minitest'
 end
 
 group :production do
